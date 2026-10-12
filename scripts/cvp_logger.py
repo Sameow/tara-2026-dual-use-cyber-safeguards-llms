@@ -3,14 +3,14 @@
 cvp_logger.py - Semi-automated capture for the CVP arm (claude.ai, Opus 4.8).
 
 Usage:
-    python3 cvp_logger.py
+    python3 scripts/cvp_logger.py
 
 For each target prompt it:
   1. Prints the prompt text (with its ID) for you to paste into a NEW claude.ai chat.
   2. Waits for you to paste the full response back (terminate with a line: ###).
   3. Asks for a finish classification (complete / refused / partial).
   4. Optionally captures the reasoning trace (terminate with: ###).
-  5. Writes a schema-matched JSON row to outputs/cvp-claude/responses.json.
+  5. Writes a schema-matched JSON row to outputs/cvp-claude-responses.json.
 
 Resumable: skips prompt_ids already logged.
 
@@ -24,8 +24,8 @@ import json
 import datetime
 import pathlib
 
-PROMPTS_FILE = "prompts.json"
-OUT_FILE = "outputs/cvp-claude/responses.json"
+PROMPTS_FILE = "prompts/prompts.json"
+OUT_FILE = "outputs/cvp-claude-responses.json"
 MODEL = "claude-opus-4-8 (claude.ai, CVP)"
 
 # intent_class strings EXACTLY as they appear in prompts.json
