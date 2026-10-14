@@ -291,7 +291,7 @@ Claude Opus 4.8 with Anthropic Cyber Verification Program (CVP) adjustments, run
 
 **Why a separate method:** at the time of the study, CVP applied only to claude.ai (GUI) usage, so this arm could not run through the API pipeline (see *Assumptions & Limitations* in the [Singapore slides](presentations/TARA%20-%20Dual-Use%20Cyber%20Safeguards%20in%20Frontier%20Models.pdf)). The `cvp-claude` API track in `config/tracks.json` is defined but was not used.
 
-**Protocol** (`scripts/cvp_logger.py`):
+**Protocol** (`scripts/cvp_logger.py`, written by Samuel Ong for this arm):
 - claude.ai, Claude Opus 4.8, memory off, web search off. Clean context was required because the interface was found injecting personalization into responses during setup.
 - One fresh chat per prompt; each response pasted into the logger, with the reasoning trace where shown.
 - Concerning prompts: one clean response logged, with no follow-up or pushing.
